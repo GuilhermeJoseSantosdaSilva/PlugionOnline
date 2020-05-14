@@ -25,3 +25,18 @@ $(document).on("click", "#beep", function(){
 $(document).on("click", "#vibra", function(){
   navigator.vibrate(1000);
 });
+
+$(document).on("click", "#local", function(){
+
+  var onSuccess = function(position) {
+        alert('Latitude: '          + position.coords.latitude          + '\n' +
+              'Longitude: '         + position.coords.longitude + "\n");
+    };
+
+    function onError(error) {
+        alert("Deu errado mané");
+    }
+
+  navigator.geolocation.getCurrentPosition(onSuccess, onError);
+});
+
