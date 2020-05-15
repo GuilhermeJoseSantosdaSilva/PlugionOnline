@@ -26,11 +26,23 @@ $(document).on("click", "#vibra", function(){
   navigator.vibrate(1000);
 });
 
+function mostraMapa(lati, longe){
+L.mapquest.key = 'qAs1VkBIpm4taRN4Ae5jtwBqWhAyOkO6';
+
+        var map = L.mapquest.map('map', {
+          center: [lati, longe],
+          layers: L.mapquest.tileLayer('map'),
+          zoom: 15
+        });
+
+        map.addControl(L.mapquest.control());
+}
+
 $(document).on("click", "#local", function(){
 
   var onSuccess = function(position) {
-        alert('Latitude: '          + position.coords.latitude          + '\n' +
-              'Longitude: '         + position.coords.longitude + "\n");
+    mostraMapa(position.coords.latitude , position.coords.longitude);
+        
     };
 
     function onError(error) {

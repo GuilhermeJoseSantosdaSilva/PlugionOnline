@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="lib/css/bootstrap.min.css">
   <script src="lib/jquery-3.5.1.min.js"></script>
   <script src="components/plugins.js"></script>
+  <!-- Map API -->
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
 
 </head>
 <body>
@@ -46,6 +49,21 @@
       <button class="btn btn-primary btn-block" id="local">Local</button>
       </div>
     </div>
+    <div class="row">
+      <div class="col-sm">
+      <div class="map" id="map"></div>
+      </div>
+    </div>
   </div>
+  <style>
+    button{
+      margin-top: 5px;
+    }
+    .map{
+      width: 100%;
+      height: 200px;
+      margin-top: 10px;
+    }
+  </style>
 </body>
 </html>
